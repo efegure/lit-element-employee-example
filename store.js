@@ -94,7 +94,6 @@ function reducer(state = initialState, action) {
     case 'SET_PAGE':
       return {...state, currentPage: action.payload};
     case 'SET_SEARCH_TERM': {
-      debugger;
       return {...state, searchTerm: action.payload};
     }
 
