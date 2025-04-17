@@ -110,6 +110,7 @@ suite('employee-table', () => {
           </tbody>
         </table>
             </div>
+            <slot></slot>
     `
     );
   });
