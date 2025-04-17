@@ -66,6 +66,7 @@ export class EditModal extends LitElement {
   }
   constructor() {
     super();
+    this.employee = {};
   }
 
   render() {

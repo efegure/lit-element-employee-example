@@ -105,8 +105,6 @@ export class EmployeeTable extends LitElement {
   render() {
     return html`
       <div class="container">
-        <!-- ${this.pageCount * this.currentPage}
-        ${this.pageCount * (this.currentPage + 1)} ${this.currentPage + 1} -->
         <table>
           <tr>
             <th><input type="checkbox" /></th>
@@ -168,7 +166,6 @@ export class EmployeeTable extends LitElement {
             )}
         </table>
       </div>
-      <slot></slot>
     `;
   }
 
