@@ -22,3 +22,27 @@ export const validateEmail = (email) => {
 export const isNumeric = (num) => {
   return !isNaN(num);
 };
+
+export const isValidEmployee = (employee, i18n) => {
+  if (
+    employee.email === '' ||
+    employee.lastName === '' ||
+    employee.firstName === '' ||
+    employee.phone === '' ||
+    employee.department === '' ||
+    employee.dateOfBirth === '' ||
+    employee.dateOfEmployment === ''
+  ) {
+    alert(i18n('fillAllFields'));
+    return false;
+  }
+  if (!isNumeric(employee.phone) || employee.phone.length !== 10) {
+    alert(i18n('enterValidPhone'));
+    return false;
+  }
+  if (!validateEmail(employee.email)) {
+    alert(i18n('enterValidEmail'));
+    return false;
+  }
+  return true;
+};

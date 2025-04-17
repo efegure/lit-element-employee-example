@@ -1,5 +1,3 @@
-let language = document.documentElement.lang;
-
 const translations = {
   en: {
     firstName: 'First Name',
@@ -24,6 +22,9 @@ const translations = {
     confirm: 'Confirm',
     cancel: 'Cancel',
     areYouSure: 'Are you sure you want to delete?',
+    fillAllFields: 'Please fill all the fields',
+    enterValidPhone: 'Please enter correct phone number, should be 10 digits',
+    enterValidEmail: 'Please enter correct email address',
   },
   tr: {
     firstName: 'İsim',
@@ -48,9 +49,13 @@ const translations = {
     confirm: 'Onayla',
     cancel: 'İptal Et',
     areYouSure: 'Silmek istediğinize emin misiniz?',
+    fillAllFields: 'Lütfen tüm alanları doldurunuz',
+    enterValidPhone:
+      'Lütfen geçerli bir telefon numarası giriniz, 10 haneli olmalıdır',
+    enterValidEmail: 'Lütfen geçerli bir email adresi giriniz',
   },
 };
 
 export function i18n(key) {
-  return translations[language][key];
+  return translations[document.documentElement.lang ?? 'en'][key];
 }

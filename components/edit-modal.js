@@ -7,6 +7,7 @@
 import {LitElement, html, css} from 'lit';
 import {i18n} from '../i18n';
 import {store} from '../store.js';
+import {isValidEmployee} from '../helpers';
 
 /**
  * An example element.
@@ -105,6 +106,10 @@ export class EditModal extends LitElement {
   }
 
   _editEmployee() {
+    console.log(isValidEmployee(this.temp.employee, i18n), this.temp.employee);
+    if (!isValidEmployee(this.temp.employee, i18n)) {
+      return;
+    }
     store.dispatch({
       type: 'EDIT_EMPLOYEE',
       payload: {index: this.index, employee: this.temp.employee},

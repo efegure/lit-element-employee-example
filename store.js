@@ -7,7 +7,7 @@ const mockEmployees = [
       lastName: 'Doe',
       dateOfEmployment: '2018-12-31',
       dateOfBirth: '2014-12-31',
-      phone: Math.random().toString(36),
+      phone: '1234567890',
       email: 'john.doe@gmail.com',
       department: 'tech',
       position: 'Software Engineer',
@@ -16,11 +16,11 @@ const mockEmployees = [
   ),
   ...Array(1).fill(
     {
-      firstName: 'John',
-      lastName: 'Doe',
+      firstName: 'Efe',
+      lastName: 'Güre',
       dateOfEmployment: '2018-12-31',
       dateOfBirth: '1990-12-31',
-      phone: Math.random().toString(36),
+      phone: '1234567890',
       email: 'john.doe@gmail.com',
       department: 'tech',
       position: 'Software Engineer',

@@ -8,7 +8,7 @@ import {LitElement, html, css} from 'lit';
 import {i18n} from '../i18n.js';
 import {store} from '../store.js';
 import {Router} from '@vaadin/router';
-import {isNumeric, validateEmail} from '../helpers.js';
+import {isValidEmployee} from '../helpers.js';
 
 /**
  * An example element.
@@ -89,29 +89,7 @@ export class AddEmployeePage extends LitElement {
   }
 
   _addEmployee() {
-    console.log(this.temp);
-    if (
-      this.temp.employee.name === '' ||
-      this.temp.employee.surname === '' ||
-      this.temp.employee.email === '' ||
-      this.temp.employee.phone === '' ||
-      this.temp.employee.salary === '' ||
-      this.temp.employee.department === '' ||
-      this.temp.employee.dateOfBirth === '' ||
-      this.temp.employee.dateOfEmployment === ''
-    ) {
-      alert('Please fill all the fields');
-      return;
-    }
-    if (
-      !isNumeric(this.temp.employee.phone) ||
-      this.temp.employee.phone.length !== 10
-    ) {
-      alert('Please enter correct phone number');
-      return;
-    }
-    if (!validateEmail(this.temp.employee.email)) {
-      alert('Please enter correct email address');
+    if (!isValidEmployee(this.temp.employee, i18n)) {
       return;
     }
 
