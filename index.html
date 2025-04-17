@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Employee Management App</title>
+    
+    
+    <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="./node_modules/lit/polyfill-support.js"></script>
+    <script type="module" src="./components/employee-list.js"></script>
+    <script type="module" src="./components/employee-table.js"></script>
+    <script type="module" src="./components/paginator.js"></script>
+    <script type="module" src="./components/nav-links.js"></script>
+    <script type="module" src="./components/delete-modal.js"></script>
+    <script type="module" src="./components/edit-modal.js"></script>
+    <script type="module" src="./components/add-employee-form.js"></script>
+    <script type="module" src="./my-element.js"></script>
+    <script type="module" src="./router.js"></script>
+    <script type="module" src="./pages/add-employee-page.js"></script>
+    <script type="module" src="./pages/employee-list-page.js"></script>
+    <script type="module" src="./pages/employee-list-page.js"></script>
+    <script type="module" src="./store.js"></script>
+   
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        background-color: #f5f5f5;
+      }
+      #outlet {
+        margin: 50px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="outlet">
+      <nav-links></nav-links>
+    </div>
+  </body>
+</html>
