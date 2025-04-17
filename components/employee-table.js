@@ -118,11 +118,11 @@ export class EmployeeTable extends LitElement {
             <th>${i18n('actions')}</th>
           </tr>
           ${this.employees
+            .filter((employee) => filterEmployee(employee, this.searchTerm))
             .slice(
               this.pageCount * this.currentPage,
               this.pageCount * (this.currentPage + 1)
             )
-            .filter((employee) => filterEmployee(employee, this.searchTerm))
             .map(
               (employee, index) =>
                 html`
@@ -166,6 +166,7 @@ export class EmployeeTable extends LitElement {
             )}
         </table>
       </div>
+      <slot></slot>
     `;
   }
 

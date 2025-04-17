@@ -5,6 +5,7 @@
  */
 import {LitElement, html, css} from 'lit';
 import {store} from '../store.js';
+import {filterEmployee} from '../helpers.js';
 
 /**
  * An example element.
@@ -96,8 +97,10 @@ export class PaginationSelector extends LitElement {
    * Initializes state
    */
   setState() {
-    const {currentPage, employees, pageCount} = store.getState();
-    this.total = employees.length;
+    const {currentPage, employees, pageCount, searchTerm} = store.getState();
+    this.total = employees.filter((employee) =>
+      filterEmployee(employee, searchTerm)
+    ).length;
     this.pageCount = pageCount;
     this.currentPage = currentPage;
   }

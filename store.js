@@ -60,7 +60,7 @@ const initialState = {
   employees: localStorage.getItem('employeeList')
     ? JSON.parse(localStorage.getItem('employeeList'))
     : mockEmployees,
-  pageCount: 10,
+  pageCount: 5,
   currentPage: 0,
   searchTerm: '',
 };
